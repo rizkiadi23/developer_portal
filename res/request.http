@@ -1,0 +1,147 @@
+
+### Register User
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "name": "tester user",
+  "email": "tester@user.com",
+  "password": "test123"
+}
+
+### Login User
+POST http://localhost:5000/api/auth
+Content-Type: application/json
+
+{
+  "email": "tester@user.com",
+  "password": "test123"
+}
+
+### Get User Info
+GET http://localhost:5000/api/auth
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1MDk4NiwiZXhwIjoxNTczMjUwOTg2fQ.bovTh109pQy3EZAwoYvDvORSEouk8bZbI6fd1Oe1Xas
+
+### Get My Profile
+GET http://localhost:5000/api/profile/me
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1MDk4NiwiZXhwIjoxNTczMjUwOTg2fQ.bovTh109pQy3EZAwoYvDvORSEouk8bZbI6fd1Oe1Xas
+
+### PROFILE API
+POST http://localhost:5000/api/profile
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1MDk4NiwiZXhwIjoxNTczMjUwOTg2fQ.bovTh109pQy3EZAwoYvDvORSEouk8bZbI6fd1Oe1Xas
+
+{
+  "company": "Test INC.",
+  "status": "Senior Developer",
+  "website": "https://www.techsoft.com",
+  "skills": "HTML, CSS, JS"
+}
+
+### GET ALL PROFILES
+GET http://localhost:5000/api/profile
+Content-Type: application/json
+
+### GET PROFILE BY USER ID
+GET http://localhost:5000/api/profile/user/5d8cef1b6ee08d2c7c4b854c
+Content-Type: application/json
+
+### DELETE Profile
+DELETE http://localhost:5000/api/profile
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY1Y2I1MWY1ZDQzMTg4OGIwNTIyIn0sImlhdCI6MTU2OTY1MDMxOCwiZXhwIjoxNTczMjUwMzE4fQ.USjpPu_HCvDVXUdIR8vgPw1vEpAwFKUTmHg6NeUeu3I
+
+### PUT Add Experience
+PUT http://localhost:5000/api/profile/experience
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1MDk4NiwiZXhwIjoxNTczMjUwOTg2fQ.bovTh109pQy3EZAwoYvDvORSEouk8bZbI6fd1Oe1Xas
+
+{
+  "title": "Instructor & Junior Developer",
+  "company": "Traversy Media",
+  "location": "Boston, MA",
+  "from": "8-10-2010",
+  "current": true,
+  "description": "Create projects and courses on web development"
+}
+
+### DELETE Experience
+DELETE http://localhost:5000/api/profile/experience/5d8efa937365630aa8928723
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1MDk4NiwiZXhwIjoxNTczMjUwOTg2fQ.bovTh109pQy3EZAwoYvDvORSEouk8bZbI6fd1Oe1Xas
+
+### PUT Add Education
+PUT http://localhost:5000/api/profile/education
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1NTc0OCwiZXhwIjoxNTczMjU1NzQ4fQ.mjVs5PCcVYEw7doUJQtr9ObbPXQ7QyvQncq4H7OfSjU
+
+{
+  "school": "Bandung Institute of Technology",
+  "degree": "Bachelor Degree",
+  "fieldofstudy": "Computer Science",
+  "from": "8-10-2006",
+  "to": "8-10-2010",
+  "description": "Create projects and courses on web development"
+}
+
+### DELETE Education
+DELETE http://localhost:5000/api/profile/education/5d8f0bdb97697b40ecd13ed6
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1NTc0OCwiZXhwIjoxNTczMjU1NzQ4fQ.mjVs5PCcVYEw7doUJQtr9ObbPXQ7QyvQncq4H7OfSjU
+
+### GET Github Repos
+GET http://localhost:5000/api/profile/github/
+
+### POSTS APIs
+
+### POST Create Post
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+{
+	"text": "Lorem ipsum dolor sir amet"
+}
+
+### GET Get All Posts
+GET http://localhost:5000/api/posts
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+### GET Single Post By Id
+GET http://localhost:5000/api/posts/5d8f18067b728230d010d4de
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+### DELETE Single Post By Id
+DELETE http://localhost:5000/api/posts/5d8f13e87d32574274f13e19
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+
+### PUT Like single post
+PUT http://localhost:5000/api/posts/like/5d8f18067b728230d010d4de
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+### PUT Unlike single post
+PUT http://localhost:5000/api/posts/unlike/5d8f18067b728230d010d4de
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+
+### POST Add comment to the post
+POST http://localhost:5000/api/posts/comment/5d8f18067b728230d010d4de
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
+
+{
+	"text": "Comment One"
+}
+
+### DELETE delete comment in the post
+DELETE http://localhost:5000/api/posts/comment/5d8f18067b728230d010d4de/5d8f1c25790e07435416adb3
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWQ4ZWY5Mjk3OGRiYmQyOGU0NWVjOWMzIn0sImlhdCI6MTU2OTY1Nzc2MSwiZXhwIjoxNTczMjU3NzYxfQ.ns5LoZHJoIabArswN5B7hlNH6OA0tHdqhB0RKgiV0Xo
