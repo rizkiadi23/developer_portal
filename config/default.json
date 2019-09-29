@@ -1,6 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://user_tester:user_tester123@xcluster-9v5qr.mongodb.net/db_devconnector?retryWrites=true&w=majority",
-  "jwtSecret": "devconnsecret",
-  "githubClientId": "c938561e873b0069dda7",
-  "githubSecret": "41f6699384b43115cc79857e671b21c367c2c4c1"
+  "mongoURI": "your_mongodb_connection_string",
+  "jwtSecret": "create_secret_key_whatever_you_want",
+  "githubClientId": "put_your_client_id_from_github",
+  "githubSecret": "put_your_github_secret_from_github"
 }
