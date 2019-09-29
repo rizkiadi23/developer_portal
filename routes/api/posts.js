@@ -96,7 +96,7 @@ router.delete("/:id", auth, async (req, res) => {
 
     await post.remove();
 
-    res.json({ msg: "Post removed" });
+    return res.json({ msg: "Post removed" });
   } catch (err) {
     console.error(err.message);
     if (err.kind === "ObjectId") {
@@ -117,17 +117,17 @@ router.put("/like/:id", auth, async (req, res) => {
     if (
       post.likes.filter(like => like.user.toString() === req.user.id).length > 0
     ) {
-      return res.json(400).json({ msg: "Post already liked" });
+      return res.status(400).json({ msg: "Post already liked" });
     }
 
     post.likes.unshift({ user: req.user.id });
 
     await post.save();
 
-    res.json(post.likes);
+    return res.json(post.likes);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Internal Server Error");
+    return res.status(500).send("Internal Server Error");
   }
 });
 
